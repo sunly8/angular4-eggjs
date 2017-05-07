@@ -21,8 +21,7 @@ import { MaterialModule } from "@angular/material";
 
 @NgModule({
 // ...
-  imports: [BrowserAnimationsModule],
-  imports: [MaterialModule],
+  imports: [BrowserAnimationsModule,MaterialModule],
 // ...
 })
 export class AppModule { }
@@ -41,7 +40,11 @@ export class AppModule { }
     "styles": [
         "styles.scss"
     ]
-}
+},
+"defaults": {
+    // ng命令默认创建scss
+    "styleExt": "scss",
+  }
 }
 ```
 

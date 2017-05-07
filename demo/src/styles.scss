@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*引入material定义库*/
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+/*
+定义变量，这些函数都在库里，用到的有:
+mat-palette(调色板，默认色级，高亮色级，深色级) 获取调色板
+mat-light-theme(主要色板，重要色板，警告色板) 获取高亮皮肤
+mat-dark-theme(主要色板，重要色板，警告色板) 获取调色板
+mat-color(色板，级别)
+颜色级别有：50，100，200...900，从浅到深
+*/
+
+$app-primary: mat-palette($mat-teal);
+$app-accent: mat-palette($mat-pink, 200, 100, 400);
+$app-warn: mat-palette($mat-deep-orange);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-dark-primary: mat-palette($mat-blue-grey, 200, 100, 900);
+$app-dark-accent: mat-palette($mat-deep-purple);
+$app-dark-warn: mat-palette($mat-deep-orange);
+$app-dark-theme: mat-dark-theme($app-dark-primary, $app-dark-accent, $app-dark-warn);
+//  默认情况下使用 $app-theme 定义的皮肤
+@include angular-material-theme($app-theme);
+.dark {
+  // 局部使用 $app-dark-theme 皮肤
+  @include angular-material-theme($app-dark-theme); // 自定义某些样式
+  background-color: mat-color(mat-palette($mat-blue-grey), 900);
+  color: mat-color($app-dark-primary, 50);
+}
