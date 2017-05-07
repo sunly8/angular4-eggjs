@@ -1,0 +1,15 @@
+<div>
+  <p>
+    子组件接收到的值是 {{myValue}}
+  </p>
+  <button *ngIf="!jsonData" type="" (click)="myclick()">发送数据给父组件</button>
+
+
+  <!--json方式-->
+  <pre>{{jsonData|json}}</pre>
+
+
+  <!-- *ngIf="jsonData" 是为了阻止jsonData未获取到之前初始化-->
+  <input *ngIf="jsonData" type="text" [(ngModel)]="jsonData.name">
+
+</div>

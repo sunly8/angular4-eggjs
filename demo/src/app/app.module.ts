@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+
 import { NavModule } from "./nav/nav.module";
+
+import { MainModule } from "./main/main.module";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +17,8 @@ import { NavModule } from "./nav/nav.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    NavModule
+    NavModule,
+    MainModule
   ],
   providers: [],
   bootstrap: [AppComponent],

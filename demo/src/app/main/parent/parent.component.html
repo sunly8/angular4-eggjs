@@ -1,0 +1,28 @@
+<div>
+  父组件
+  <!--加入一个双向绑定的 parentValue 以便测试-->
+  <!--在包含本组件的模块中 
+
+  import { FormsModule } from '@angular/forms';
+
+  @NgModule({
+    imports: [
+      FormsModule
+  ...
+  以让 ngModel 双向绑定启用
+
+-->
+  <input type="text" [(ngModel)]="parentValue">
+
+  <p> 输入的值是 {{parentValue}}</p>
+  <p> 从子组件接受到 {{c}}</p>
+  <!-- 通过 [属性]="本组件变量名" 的方式 传值给子组件 -->
+  <app-child [toChild]="parentValue" (myEvent)="chileDate($event)"></app-child>
+
+  <hr> json方式互相传值
+  <input type="text" [(ngModel)]="json.name">
+  <input type="text" [(ngModel)]="json.profile.mobile">
+  <app-child [jsonData]="json"></app-child>
+
+
+</div>
