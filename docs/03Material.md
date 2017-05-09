@@ -35,6 +35,7 @@ export class AppModule { }
 
 ```json
 // /www/.angular-cli.json
+// 注意修改cli配置文件后, 如果正在调试,需要重新运行 ng serve
 {
 "apps":{
     "styles": [
@@ -87,7 +88,8 @@ $app-dark-theme: mat-dark-theme($app-dark-primary, $app-dark-accent, $app-dark-w
     @include angular-material-theme($app-dark-theme); 
     // 自定义某些样式
     background-color: mat-color(mat-palette($mat-blue-grey),900);
-    color: mat-color($app-dark-primary, 50);
+    // color: mat-color($app-dark-primary, 50); 从当前色板中取色 或 直接从material颜色序列中读取颜色
+    color: map-get($mat-blue-grey, 50);  // map-get是sass函数
 }
 ```
 

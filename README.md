@@ -8,4 +8,3 @@
 * [angular+eggjs实战（6）：Angular4 创建并调用第一个模块和组件](docs/06创建并调用第一个模块和组件.md)
 * [angular+eggjs实战（7）：Angular4 组件间传值](docs/07组件间传值.md)
 * [angular+eggjs实战（8）：angular4 内置指令](docs/08angular4内置指令.md)
-
