@@ -16,7 +16,7 @@ const routes: Routes = [
 export const appRouting = RouterModule.forRoot(routes);
 ```
 
-在根模块中引入路由
+在根模块中引入路由, 为特性模块定义的路由在其模块中引入
 
 ```ts
 // app/app.module.ts
@@ -42,12 +42,29 @@ const routes: Routes = [
 ];
 ```
 
+- pathMatch?: string; 默认为前缀匹配 "prefix"; "full" 为完全匹配
+- outlet?: string; 路由目标
+- children?: Routes; 子路由的规则
+
 ## 加载路由
 
 在根组件或当前组件的模板中
 
 ```html
 <router-outlet></router-outlet>
+```
+
+## 多个路由区域
+
+
+```js
+  { path: 'news', outlet:'let1'  component: Newsomponent }
+  { path: 'news', outlet:'let2'  component: Newsomponent }
+```
+
+```html
+<router-outlet name="let1"></router-outlet>
+<router-outlet name="let2"></router-outlet>
 ```
 
 ## 链接及访问
@@ -57,7 +74,9 @@ const routes: Routes = [
 <a [routerLink]="['/detail', news.id]">{{news.title}}</a>
 ```
 
-`routerLinkActive="active"` 即在本路由激活时添加类 `.active`
+`routerLinkActive="active"` 即在本路由激活时添加样式 `.active`
+
+或
 
 ```ts
 import { Router } from '@angular/router';
