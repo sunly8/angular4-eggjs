@@ -9,3 +9,5 @@
 * [angular+eggjs实战（7）：Angular4 组件间传值](docs/07组件间传值.md)
 * [angular+eggjs实战（8）：angular4 内置指令](docs/08angular4内置指令.md)
 * [angular+eggjs实战（9）：angular4 路由](docs/09angular4路由.md)
+* [angular+eggjs实战（9）：angular4 指令的生命周期钩子](docs/10指令的生命周期钩子.md)
+* [angular+eggjs实战（9）：angular4 一个自定义指令的例子](docs/11一个自定义指令的例子.md)

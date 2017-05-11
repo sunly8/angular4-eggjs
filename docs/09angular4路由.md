@@ -1,9 +1,9 @@
 # angular 4 路由
 
-创建根路由模块 `ng g cl app.router`
+使用cli命令创建根路由模块 `ng g cl app.router` 或自己建一个路由配置文件 如:`app/app.router.ts`
 
 ```ts
-// app/router/router.module.ts
+// app/app.router.ts
 // 将文件修改为
 
 import { RouterModule, Routes } from '@angular/router';
@@ -56,16 +56,17 @@ const routes: Routes = [
 
 ## 多个路由区域
 
-
 ```js
-  { path: 'news', outlet:'let1'  component: Newsomponent }
-  { path: 'news', outlet:'let2'  component: Newsomponent }
+  { path: 'news', outlet:'let1'  component: NewsComponent }
+  { path: 'news', outlet:'let2'  component: News2Cmponent }
 ```
 
 ```html
 <router-outlet name="let1"></router-outlet>
 <router-outlet name="let2"></router-outlet>
 ```
+
+即访问 `/news/` 时同时加载 `NewsComponent` 和 `News2Cmponent` 两个组件
 
 ## 链接及访问
 
@@ -89,4 +90,3 @@ this.router.navigate(['/detail', this.news.id])
 ```
 
 navigateByUrl 方法指向完整的绝对路径
-

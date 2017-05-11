@@ -1,4 +1,4 @@
-# angular4内置指令
+# angular4内置结构性指令和属性指令
 
 ## NgClass
 
