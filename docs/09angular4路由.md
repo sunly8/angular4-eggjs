@@ -170,7 +170,7 @@ export interface CanDeactivateComponent {
 }
 ```
 
-理由配置
+路由配置
 
 ```ts
 {
