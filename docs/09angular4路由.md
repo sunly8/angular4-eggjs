@@ -73,6 +73,7 @@ const routes: Routes = [
 ```html
 <a routerLink="/detail/1" routerLinkActive="active">detail</a>
 <a [routerLink]="['/detail', news.id]">{{news.title}}</a>
+<a [routerLink]="[{ outlets: { let2: ['news'] } }]">Contact</a>
 ```
 
 `routerLinkActive="active"` 即在本路由激活时添加样式 `.active`
@@ -87,6 +88,102 @@ constructor(private router: Router) {}
 // ...
 
 this.router.navigate(['/detail', this.news.id])
+this.router.navigate([{ outlets: { let2: null }}]);
 ```
 
 navigateByUrl 方法指向完整的绝对路径
+
+
+## 理由守卫
+
+适用于后台管理等需要登录才能使用的模块
+
+创建一个认证服务
+
+```ts
+// app/auth.service.ts
+
+import { Injectable }     from '@angular/core';
+import { CanActivate }    from '@angular/router';
+
+@Injectable()
+export class AuthService implements CanActivate {
+  canActivate() {
+    // 这里判断登录状态, 返回 true 或 false
+    return true;
+  }
+}
+```
+
+添加或修改理由配置
+
+```ts
+// app/app.router.ts
+
+// 增加 CanActivate
+import { CanActivate ... } from '@angular/router';
+
+
+  // 配置中增加 canActivate 如:
+  { path: 'admin', canActivate:[AuthService] ... }
+
+```
+
+
+## 退出守卫
+
+适合于编辑器修改后的保存提示等场景
+
+```ts
+// app/deac.service.ts
+
+import { Injectable }     from '@angular/core';
+import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot }    from '@angular/router';
+
+// CanDeactivateComponent 是定义的接口,见下段代码
+import { CanDeactivateComponent } from './can-deactivate.omponent';
+
+@Injectable()
+export class DeacService implements CanDeactivate<CanDeactivateComponent> {
+  canDeactivate(
+    canDeactivateComponent: CanDeactivateComponent,
+    activatedRouteSnapshot: ActivatedRouteSnapshot,
+    routerStateSnapshot: RouterStateSnapshot
+  ) {
+    // 目标路由和当前路由
+    console.log(activatedRouteSnapshot);
+    console.log(routerStateSnapshot);
+
+    // 判断并返回
+    return canDeactivateComponent.canDeactivate ? canDeactivateComponent.canDeactivate() : true
+
+  }
+}
+```
+
+```ts
+// can-deactivate.omponent.ts
+
+// 接口组件, 返回 true 或 false 如表单发生改变则调用对话框服务
+export interface CanDeactivateComponent {
+  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+}
+```
+
+理由配置
+
+```ts
+{
+  path: ...,
+  canDeactivate: [DeacService],
+  component: ...
+}
+```
+
+模块中添加服务
+
+```ts
+providers: [
+  DeactivateGuardService
+]
+```
