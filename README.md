@@ -12,3 +12,4 @@
 * [angular+eggjs实战笔记（10）：angular4 指令的生命周期钩子](docs/10指令的生命周期钩子.md)
 * [angular+eggjs实战笔记（11）：angular4 一个自定义指令的例子](docs/11一个自定义指令的例子.md)
 * [angular+eggjs实战笔记（12）：angular4 树型结构](docs/12树型结构.md)
+* [angular+eggjs实战笔记（13）：angular4 动画库](docs/13基本动画库.md)
