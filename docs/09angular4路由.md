@@ -94,7 +94,7 @@ this.router.navigate([{ outlets: { let2: null }}]);
 navigateByUrl 方法指向完整的绝对路径
 
 
-## 理由守卫
+## 路由守卫
 
 适用于后台管理等需要登录才能使用的模块
 
@@ -115,7 +115,7 @@ export class AuthService implements CanActivate {
 }
 ```
 
-添加或修改理由配置
+添加或修改路由配置
 
 ```ts
 // app/app.router.ts
