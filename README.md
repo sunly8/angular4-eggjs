@@ -14,3 +14,4 @@
 * [angular+eggjs实战笔记（12）：angular4 树型结构](docs/12树型结构.md)
 * [angular+eggjs实战笔记（13）：angular4 动画库](docs/13基本动画库.md)
 * [angular+eggjs实战笔记（14）：angular4 动态表单](docs/14动态表单.md)
+* [angular+eggjs实战笔记（15）：angular4 RxJS Observables observers](docs/15Observables.md)
