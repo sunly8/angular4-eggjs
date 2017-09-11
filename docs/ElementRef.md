@@ -1,4 +1,4 @@
-# angular4 @ViewChild ElementRef  renderer2 invokeElementMethod
+# angular4 @ViewChild ElementRef  renderer2
 
 angular 如何操作 DOM ? 这是一个问题, 熟练了 Jquery 就会想引入 Jquery 去操作, 但是这不是一个好办法.
 
