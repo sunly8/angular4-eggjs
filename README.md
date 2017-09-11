@@ -15,4 +15,4 @@
 * [angular+eggjs实战笔记（13）：angular4 动画库](docs/13基本动画库.md)
 * [angular+eggjs实战笔记（14）：angular4 动态表单](docs/14动态表单.md)
 * [angular+eggjs实战笔记（15）：angular4 RxJS Observables observers](docs/15Observables.md)
-* [angular+eggjs实战笔记（16）：angular4 invokeElementMethod  ElementRef  renderer2](docs/ElementRef.md)
+* [angular+eggjs实战笔记（16）：angular4 @ViewChild @ContentChild ElementRef renderer2](docs/ElementRef.md)

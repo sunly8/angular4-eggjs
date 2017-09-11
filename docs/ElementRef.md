@@ -16,15 +16,11 @@ angular 如何操作 DOM ? 这是一个问题, 熟练了 Jquery 就会想引入 
 @ViewChild('mydiv') mydiv: ElementRef
 
 // 返回原生节点
-let el = this.mydiv.nativeElement // 
+let el = this.mydiv.nativeElement
 
 // 使用原生方法
 let ipt = el.querySelector('input')
 
-// 调用节点的方法
-ngAfterViewInit() { //视图加载之后
-  this.renderer2.invokeElementMethod(ipt, 'focus')
-}
 ```
 
 ## @ViewChild @ContentChild @ViewChildren @ContentChildren 又是什么
